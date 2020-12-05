@@ -5,6 +5,9 @@ import Navbar from '../components/Navbar'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+import "fontsource-inter/400.css"
+import "fontsource-inter/600.css"
+import "fontsource-inter/900.css"
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
