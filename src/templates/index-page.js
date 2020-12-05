@@ -41,7 +41,7 @@ export const IndexPageTemplate = ({
               <div className="control">
                 <div className="tags has-addons">
                   <span className="tag is-primary">S{season}</span>
-                  <span className="tag is-dark">E2</span>
+                  <span className="tag is-dark">E1</span>
                 </div>
               </div>
             </div>
