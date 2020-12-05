@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
@@ -14,33 +16,73 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
+  season,
 }) => (
   <div>
-    <section className="hero is-medium is-bold">
+    <section className="hero is-bold">
       <div className="hero-body">
-          <div className="columns is-vcentered">            
+        <div className="container is-max-desktop">
+      <h4 className="subtitle is-4">{mainpitch.title}</h4>
+      </div>
+      </div>
+    </section>
+    <section className="hero is-primary is-bold">
+      <div className="hero-body">
+        <div className="columns is-vcentered">
           <div className="column is-4 is-offset-1">
-              <h1 className="title">{title}e</h1>
-              <h2 className="subtitle">{subheading}</h2>
-            </div>
-          <div className="column is-6">
-              <iframe
-                title="Spotify"
-                src="https://open.spotify.com/embed-podcast/show/3fuWZQQGODHOV2b81Df61D"
-                width="100%"
-                height="232"
-                frameborder="0"
-                allowtransparency="true"
-                allow="encrypted-media"
-              ></iframe>
-              <Link className="button is-small" to="/products">
-                <span>More episodes</span><span className="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-</svg></span>
-              </Link>
+            <div className="field is-grouped is-grouped-multiline">
+              <div className="control">
+                <div className="">
+                  <span className="is-size-6 has-text-weight-semibold has-text-danger-light is-caps">
+                    Latest Episode
+                  </span>
+                </div>
+              </div>
+              <div className="control">
+                <div className="tags has-addons">
+                  <span className="tag is-primary">S{season}</span>
+                  <span className="tag is-dark">E2</span>
+                </div>
+              </div>
             </div>
 
+            <h1 className="title is-1">{title}</h1>
+
+            <div className="content has-text-danger-light">{subheading}</div>
+            
+
+
+            <div className="field is-grouped ">
+              <div className="control">
+                <div className="tags">
+                  <span className="tag ">00:55:16</span>
+                </div>
+              </div>
+              <div className="control">
+                <div className="tags">
+                  <span className="tag">29 Nov 2020</span>
+                </div>
+              </div>
+            </div>
           </div>
+          <div className="column is-6">
+            <iframe
+              title="Spotify"
+              src="https://open.spotify.com/embed-podcast/show/3fuWZQQGODHOV2b81Df61D"
+              width="100%"
+              height="232"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+            <Link className="button is-pulled-right" to="/products">
+              <span>More episodes</span>
+              <span className="icon">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
     <section className="section">
@@ -90,6 +132,7 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
+  season: PropTypes.number,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -107,6 +150,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
+        season={frontmatter.season}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -139,6 +183,7 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+        season
         mainpitch {
           title
           description

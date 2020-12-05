@@ -1,19 +1,18 @@
 ---
 templateKey: index-page
-title: Lorum ipsum dolor amet Hit for Six
+title: Paul Nixon
+
 image: /img/home-jumbotron.jpg
 heading: Heading
-subheading: Subheading
+subheading: Hit for Six is BACK!! Michael and Rob catch-up with former England wicketkeeper and current Leicestershire CCC Head Coach Paul Nixon. They chat about Nico’s career, life as a county coach during lockdown and reflect on the future of the sport - including the challenges of match-fixing and corruption. Passionate about the game and always up for a laugh Nico also has a couple of cracking anecdotes to lift any mid-winter blues.
 mainpitch:
-  title: Mainpitch Tite
-  description: Mainpitch description lor ultimate spot for coffee lovers who want
-    to learn about their java’s origin and support the farmers that grew it. We
-    take coffee production, roasting and brewing seriously and we’re glad to
-    pass that knowledge to anyone.
+  title: From Richmond-upon-Thames to Barking and Dagenham, a lanky medium pacer and a leg-spinning all-rounder give their two cents on all things cricket.
+  description: Mainpitch description
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that
   knowledge to anyone.
+season: 2
 intro:
   blurbs:
     - image: /img/coffee.png
