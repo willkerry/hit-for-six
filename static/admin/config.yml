@@ -10,7 +10,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: admin/logo.svg
+logo_url: https://modest-lalande-3b3cb0.netlify.app/admin/logo.svg
 
 collections:
   - name: "podcast"
@@ -22,12 +22,11 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Series", name: "series", widget: "number"}
-      - {label: "Episode", name: "episode", widget: "number"}
+      - {label: Programme, name: prog, widget: object, fields: [{label: Series, name: series, widget: number}, {label: Episode, name: episode, widget: number}]}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: Links, name: links, widget: object, fields: [{label: Spotify URI, name: spotifyuri, widget: string}, {label: Other, name: other, widget: string}]}
 
 
   - name: "blog"
