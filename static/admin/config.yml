@@ -10,7 +10,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: static/admin/logo.svg
+logo_url: admin/logo.svg
 
 collections:
   - name: "podcast"
@@ -21,7 +21,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Series", name: "series", widget: "number"}
       - {label: "Episode", name: "episode", widget: "number"}
       - {label: "Description", name: "description", widget: "text"}
