@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
+import PodcastRoll from "../components/PodcastRoll";
 
 export const IndexPageTemplate = ({
   image,
@@ -113,64 +113,6 @@ export const IndexPageTemplate = ({
 
                 <div className="control">
                   <span className="subtitle is-caps is-size-7 mb-2">
-                    29 Nov 2020
-                  </span>
-                </div>
-                <div className="control">
-                  <span className="tags has-addons">
-                    <span className="tag is-episode-tag is-primary">
-                      S{season}
-                    </span>
-                    <span className="tag is-episode-tag is-dark">E1</span>
-                  </span>
-                </div>
-              </div>
-              <div className="title is-size-4 mb-4">
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fas"
-                  data-icon="play-circle"
-                  className="mr-2 svg-inline--fa fa-play-circle fa-w-16 "
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"
-                  ></path>
-                </svg>
-                Paul Nixon
-              </div>
-            </Link>
-            <div className="">
-              <Link to="#">
-                <p className="has-text-dark">
-                  Hit for Six is back! Michael and Rob catch-up with former
-                  England wicketkeeper and current Leicestershire CCC Head Coach
-                  Paul Nixon. They chat about Nico’s career, life as a county
-                  coach during lockdown and reflect on the future of the sport -
-                  including the challenges of match-fixing and corruption.
-                  Passionate about the game and always up for a laugh Nico also
-                  has a couple of cracking anecdotes to lift any mid-winter
-                  blues.
-                </p>
-              </Link>
-            </div>
-          </div>
-
-          <div className="column is-4 ">
-            <Link to="#">
-              <div className="field is-grouped mb-3">
-                <div className="control">
-                  <span className="title  has-text-primary is-caps is-size-7">
-                    Hit For Six
-                  </span>
-                </div>
-
-                <div className="control">
-                  <span className="subtitle is-caps is-size-7 mb-2">
                     24 Sep 2020
                   </span>
                 </div>
@@ -264,6 +206,65 @@ export const IndexPageTemplate = ({
                   should be picked for the T20 World Cup next year, and of
                   course how good Adil Rashid really is, the pair cover the
                   major talking points coming out of the limited-overs Summer!
+                </p>
+              </Link>
+            </div>
+          </div>
+          <div className="column is-4 ">
+            <Link to="#">
+              <div className="field is-grouped mb-3">
+                <div className="control">
+                  <span className="title  has-text-primary is-caps is-size-7">
+                    Hit For Six
+                  </span>
+                </div>
+
+                <div className="control">
+                  <span className="subtitle is-caps is-size-7 mb-2">
+                    24 Aug 2020
+                  </span>
+                </div>
+                <div className="control">
+                  <span className="tags has-addons">
+                    <span className="tag is-episode-tag is-primary">S1</span>
+                    <span className="tag is-episode-tag is-dark">E19</span>
+                  </span>
+                </div>
+              </div>
+              <div className="title is-size-4 mb-4">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="play-circle"
+                  className="mr-2 svg-inline--fa fa-play-circle fa-w-16 "
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"
+                  ></path>
+                </svg>
+                Our (Alternative) England XI (2000-2020)
+              </div>
+            </Link>
+            <div className="content has-text-dark">
+              <Link to="#">
+                <p className="has-text-dark">
+                  Earlier this year, Rob and Michael selected their England Test
+                  XI of the 21st century. A team full of some of the biggest and
+                  best names English cricket has ever produced. But what about
+                  some of those lesser known and quickly forgotten players?
+                  Those one test wonders and stop-gap selections?
+                </p>
+                <p className="has-text-dark">
+                  Joined by Nick Harris and Linus Pardoe, Rob and Michael go
+                  about selecting an alternative England XI made up of rogue
+                  characters, last-minute fill-ins, and statistical failures.
+                  The result is a side so unbalanced, it would be fitting of any
+                  England selectors meeting!
                 </p>
               </Link>
             </div>

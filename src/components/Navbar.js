@@ -98,7 +98,7 @@ const Navbar = class extends React.Component {
               
             </div>
             <div className="navbar-end has-text-centered has-text-weight-semibold">
-              <Link className="navbar-item" to="/products">
+              <Link className="navbar-item" to="/podcast">
               <span className="icon has-text-primary"><FontAwesomeIcon icon={faPodcast} /></span><span>&nbsp;Podcast</span>
               </Link>
               <Link className="navbar-item" to="/blog">
