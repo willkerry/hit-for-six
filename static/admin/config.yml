@@ -10,7 +10,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-logo_url: https://modest-lalande-3b3cb0.netlify.app/src/img/simple-logo-duotone.svg
+logo_url: static/admin/logo.svg
 
 collections:
   - name: "podcast"
