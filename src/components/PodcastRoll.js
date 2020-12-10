@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import Img from "gatsby-image";
 
 class PodcastRoll extends React.Component {
   render() {
@@ -10,57 +11,79 @@ class PodcastRoll extends React.Component {
 
     return (
       <div className="container is-max-desktop ">
-        {posts &&
-          posts.map(({ node: post }) => (
-            <article
-              className={`columns mb-6 ${
-                post.frontmatter.featuredpost ? "is-featured" : ""
-              }`}
-              key={post.id}
-            >
-              <div class="column is-4">
-                
-                {post.frontmatter.featuredimage ? (
-                  <div className="featured-thumbnail">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                      }}
-                    />
-                    
+        <div className="columns is-multiline">
+          {posts &&
+            posts.map(({ node: post }) => (
+              <article
+                className={`column is-4 ${
+                  post.frontmatter.featuredpost ? "is-featured" : ""
+                }`}
+                key={post.id}
+              >
+                <Link className="" to={post.fields.slug}>
+                  <div className="card ">
+                    <div className="card-content pb-2">
+                      <div className="content">
+                        <div className="field is-grouped mb-3">
+                          <div className="control">
+                            <span className="title  has-text-primary is-caps is-size-7">
+                              Hit For Six
+                            </span>
+                          </div>
+
+                          <div className="control">
+                            <span className="subtitle is-caps is-size-7">
+                              {post.frontmatter.date}
+                            </span>
+                          </div>
+                          <div className="control">
+                            <span className="tags has-addons">
+                              <span className="tag is-episode-tag is-primary">
+                                S{post.frontmatter.series}
+                              </span>
+                              <span className="tag is-episode-tag is-dark">
+                                E{post.frontmatter.episode}
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                        <h2 className="title is-size-4 my-0">
+                          <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            data-prefix="fas"
+                            data-icon="play-circle"
+                            className="mr-2 svg-inline--fa fa-play-circle fa-w-16 "
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"
+                            ></path>
+                          </svg>
+                          {post.frontmatter.title}
+                        </h2>
+                      </div>
+                    </div>
+                    {post.frontmatter.featuredimage ? (
+                      <div className="card-image py-2">
+                        <figure className="image">
+                          <Img fluid={post.frontmatter.featuredimage.childImageSharp.fluid}/>
+                        </figure>
+                      </div>
+                    ) : null}
+                    <div className="card-content pt-2">
+                      <div className="content">
+                        <p className="has-text-dark">{post.excerpt}</p>
+                      </div>
+                    </div>
                   </div>
-                ) : null}
-                <div className="">
-                  
-                  <span className="is-size-6 has-text-weight-semibold  is-caps">
-                    Latest Episode
-                  </span>
-                  <div className="tags has-addons">
-                    <span className="tag is-primary">S2</span>
-                    <span className="tag is-dark">E1</span>
-                  </div>
-                  <Link className="title is-size-4" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
-                </div>
-              </div>
-              <div className="column is-8">
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
                 </Link>
-              </div>
-              
-            </article>
-            
-          ))}
+              </article>
+            ))}
+        </div>
       </div>
     );
   }
@@ -84,7 +107,7 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              excerpt(pruneLength: 200)
               id
               fields {
                 slug
@@ -92,11 +115,12 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
-                featuredpost
+                date(formatString: "D MMM YYYY")
+                series
+                episode
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 264, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }

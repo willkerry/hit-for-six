@@ -12,6 +12,7 @@ media_folder: static/img
 public_folder: /img
 logo_url: https://modest-lalande-3b3cb0.netlify.app/admin/logo.svg
 
+
 collections:
   - name: "podcast"
     label: "Podcast"
@@ -22,11 +23,12 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: Programme, name: prog, widget: object, fields: [{label: Series, name: series, widget: number}, {label: Episode, name: episode, widget: number}]}
+      - {label: "Series", name: "series", widget: "number"}
+      - {label: "Episode", name: "episode", widget: "number"}
+      - {label: "Spotify URI", name: "spotifyURI", widget: "string", comment: "This identifier lets us embed an episode player. It takes the form ’spotify:episode:123456789abcdefghijklm’.", pattern: "spotify\:episode\:.{22}", "Sorry, that's not a Spotify URI." hint: "To get the episode’s Spotify URI: open Spotify and find the right show, go to the three dots, go to Share, and you'll find ’Copy Spotify URI’. https://bit.ly/36Ztqbk" }
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: Links, name: links, widget: object, fields: [{label: Spotify URI, name: spotifyuri, widget: string}, {label: Other, name: other, widget: string}]}
 
 
   - name: "blog"
