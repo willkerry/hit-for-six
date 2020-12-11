@@ -19,7 +19,6 @@ class BlogRoll extends React.Component {
               key={post.id}
             >
               <div class="column is-4">
-                
                 {post.frontmatter.featuredimage ? (
                   <div className="featured-thumbnail">
                     <PreviewCompatibleImage
@@ -28,11 +27,9 @@ class BlogRoll extends React.Component {
                         alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                       }}
                     />
-                    
                   </div>
                 ) : null}
                 <div className="">
-                  
                   <span className="is-size-6 has-text-weight-semibold  is-caps">
                     Latest Episode
                   </span>
@@ -57,9 +54,7 @@ class BlogRoll extends React.Component {
                   Keep Reading →
                 </Link>
               </div>
-              
             </article>
-            
           ))}
       </div>
     );
