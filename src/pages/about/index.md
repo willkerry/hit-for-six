@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 path: /about
-title: About HF6
+title: About
 ---
 ## First thing
 
