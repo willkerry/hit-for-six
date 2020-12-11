@@ -25,7 +25,7 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Series", name: "series", widget: "number"}
       - {label: "Episode", name: "episode", widget: "number"}
-      - {label: "Spotify URI", name: "spotifyURI", widget: "string", comment: "This identifier lets us embed an episode player. It takes the form ’spotify:episode:123456789abcdefghijklm’.", pattern: "spotify\:episode\:.{22}", "Sorry, that's not a Spotify URI." hint: "To get the episode’s Spotify URI: open Spotify and find the right show, go to the three dots, go to Share, and you'll find ’Copy Spotify URI’. https://bit.ly/36Ztqbk" }
+      - {label: "Spotify URI", name: "spotifyURI", widget: "string", pattern: ["spotify\\:episode\\:.{22}", "Sorry, that’s not a Spotify URI"], hint: "To get the episode’s Spotify URI: open Spotify and find the right show, go to the three dots, go to Share, and you'll find ’Copy Spotify URI’. It’ll look like this: ‘spotify.episode.123456789abcdefghijklm’. https://bit.ly/36Ztqbk" }
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
