@@ -1,19 +1,16 @@
 ---
-templateKey: 'about-page'
+templateKey: about-page
 path: /about
-title: About our values
+title: About HF6
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+## First thing
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec lacus id quam suscipit rhoncus. Phasellus pellentesque ligula leo, non mollis dolor feugiat id. Mauris eget dolor eu massa lacinia viverra eget non orci. Cras lacinia ex id urna elementum sollicitudin. Cras efficitur diam a pellentesque volutpat. Phasellus nec purus nec mauris laoreet tempus. Curabitur id ultrices magna, sed venenatis arcu. Vivamus ac finibus lorem. Sed mattis ultricies libero id eleifend.
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+## Second thing
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+Vivamus id dui nec odio elementum feugiat a non velit. Curabitur faucibus auctor metus ullamcorper egestas. Aenean tincidunt enim et orci fermentum, ut egestas elit placerat. Nunc suscipit libero id ipsum tincidunt, vel auctor ligula viverra. Vestibulum odio lorem, rutrum lacinia maximus eget, ullamcorper in ante. Nam fringilla viverra commodo. Phasellus id velit lacus. Aliquam ac lacinia massa. Praesent quis finibus eros. Integer id ultrices quam. Aenean id lorem efficitur, feugiat enim mollis, semper diam. Mauris pretium ante tellus, ut maximus quam feugiat quis. Integer aliquam tempor massa, ut bibendum mauris suscipit non.
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+## And another thing
+
+Maecenas efficitur mi elit, sit amet fringilla diam gravida non. Vivamus luctus consequat vulputate. Sed vel ex sit amet dui efficitur pretium vitae in risus. Sed pretium imperdiet nisl, in facilisis urna luctus at. Phasellus nec enim in dui hendrerit vulputate. Duis rutrum nisi ut semper egestas. Sed at finibus tortor. Duis at tincidunt neque, eu imperdiet purus. Nulla cursus id ex vel aliquet. Donec nec cursus ante.
