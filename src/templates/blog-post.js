@@ -106,7 +106,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
-        featuredImage={post.frontmatter.featuredimage.childImageSharp.fluid}
+        featuredImage={post.frontmatter.featuredimage}
       />
     </Layout>
   );
