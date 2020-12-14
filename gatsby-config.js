@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
+    title: "Hit For Six",
     description:
-      "This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
+      "From Richmond-upon-Thames to Barking and Dagenham, a lanky medium pacer and a leg-spinning all-rounder give their two cents on all things cricket.",
   },
   plugins: [
     "gatsby-plugin-fontawesome-css",
@@ -37,12 +37,7 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    {
-      resolve: 'gatsby-source-podcast-rss-feed',
-      options: {
-        feedURL: 'https://feed.podbean.com/hitforsix/feed.xml',
-      },
-    },
+
     {
       resolve: "gatsby-transformer-remark",
       options: {

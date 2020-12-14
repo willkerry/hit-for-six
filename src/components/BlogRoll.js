@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 class BlogRoll extends React.Component {
@@ -10,52 +11,55 @@ class BlogRoll extends React.Component {
 
     return (
       <div className="container is-max-desktop ">
-        {posts &&
-          posts.map(({ node: post }) => (
-            <article
-              className={`columns mb-6 ${
-                post.frontmatter.featuredpost ? "is-featured" : ""
-              }`}
-              key={post.id}
-            >
-              <div class="column is-4">
-                {post.frontmatter.featuredimage ? (
-                  <div className="featured-thumbnail">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                      }}
-                    />
+        <div className="columns is-multiline">
+          {posts &&
+            posts.map(({ node: post }) => (
+              <article
+                className="column is-4"
+                key={post.id}
+              >
+                <Link className="" to={post.fields.slug}>
+                  <div className="card ">
+                    {post.frontmatter.featuredimage ? (
+                      <div className="card-image">
+                        <figure className="image">
+                          <Img
+                            fluid={
+                              post.frontmatter.featuredimage.childImageSharp
+                                .fluid
+                            }
+                          />
+                        </figure>
+                      </div>
+                    ) : null}
+                    <div className="card-content pb-2">
+                      <div className="content">
+                        <h2 className="title is-size-4 my-0 has-text-weight-bold">
+                          {post.frontmatter.title}
+                        </h2>
+                      </div>
+                    </div>
+
+                    <div className="card-content pt-2">
+                      <div className="content">
+                        <p className="has-text-dark">{post.excerpt}</p>
+                      </div>
+                    </div>
+                    <div className="card-content pt-0 pb-3">
+                      <div className="field is-grouped mb-3">
+                        <div className="control">
+                          <span className="subtitle is-caps is-size-7">
+                            {post.frontmatter.date}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    
                   </div>
-                ) : null}
-                <div className="">
-                  <span className="is-size-6 has-text-weight-semibold  is-caps">
-                    Latest Episode
-                  </span>
-                  <div className="tags has-addons">
-                    <span className="tag is-primary">S2</span>
-                    <span className="tag is-dark">E1</span>
-                  </div>
-                  <Link className="title is-size-4" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
-                </div>
-              </div>
-              <div className="column is-8">
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
                 </Link>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+        </div>
       </div>
     );
   }
@@ -87,7 +91,7 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
+                date(formatString: "d MMM YYYY")
                 featuredpost
                 featuredimage {
                   childImageSharp {

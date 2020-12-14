@@ -41,7 +41,7 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-    <section>
+    <section className="section">
       <div className="container is-max-desktop">Recent blog posts go here.</div>
     </section>
   </div>

@@ -16,7 +16,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="section">
         <div className="container is-max-desktop mt-6">
           <PageContent className="content" content={content} />
         </div>

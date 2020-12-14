@@ -26,7 +26,7 @@ class PodcastRoll extends React.Component {
                       <div className="content">
                         <div className="field is-grouped mb-3">
                           <div className="control">
-                            <span className="title  has-text-primary is-caps is-size-7">
+                            <span className="title has-text-weight-bold has-text-primary is-caps is-size-7">
                               Hit For Six
                             </span>
                           </div>

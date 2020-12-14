@@ -63,6 +63,7 @@ const Navbar = class extends React.Component {
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
+            <div className="navbar-start has-text-centered">
             <a
                 className="navbar-item"
                 href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL2hpdGZvcnNpeC9mZWVkLnhtbA?sa=X&ved=0CAMQ4aUDahcKEwjojIXe37btAhUAAAAAHQAAAAAQAQ&hl=en-GB"
@@ -83,7 +84,7 @@ const Navbar = class extends React.Component {
                   <img src={spotify} alt="Spotify" />
                 </span>
               </a>
-              <div className="navbar-start has-text-centered">
+              
               <a
                 className="navbar-item"
                 href="https://podcasts.apple.com/us/podcast/hit-for-six/id1507432062"
