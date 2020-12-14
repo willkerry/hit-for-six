@@ -29,6 +29,7 @@ export const BlogPostTemplate = ({
                 <h1 className="title is-size-2">{title}</h1>
               </div>
             </div>
+            {featuredImage ? (
             <figure className="image block">
               <Img
                 className=""
@@ -36,6 +37,7 @@ export const BlogPostTemplate = ({
                 style={{ "border-radius": "0.25rem" }}
               />
             </figure>
+            ) : null}
             <div className="columns block is-vcentered">
               <div className="column is-9">
                 <div className="subtitle">{description}</div>

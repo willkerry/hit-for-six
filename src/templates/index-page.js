@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import Layout from "../components/Layout";
-import BlogRoll from "../components/BlogRoll";
 import RecentPodcastRoll from "../components/RecentPodcastRoll";
 import LatestPodcast from "../components/LatestPodcast";
 
