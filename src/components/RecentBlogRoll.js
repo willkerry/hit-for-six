@@ -1,0 +1,111 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
+
+class RecentBlogRoll extends React.Component {
+  render() {
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
+
+    return (
+      <div className="container is-max-desktop ">
+        <div className="columns is-multiline">
+          {posts &&
+            posts.map(({ node: post }) => (
+              <article
+                className="column is-4"
+                key={post.id}
+              >
+                <Link className="" to={post.fields.slug}>
+                  <div className="card ">
+                    {post.frontmatter.featuredimage ? (
+                      <div className="card-image">
+                        <figure className="image">
+                          <Img
+                            fluid={
+                              post.frontmatter.featuredimage.childImageSharp
+                                .fluid
+                            }
+                          />
+                        </figure>
+                      </div>
+                    ) : null}
+                    <div className="card-content pb-2">
+                      <div className="content">
+                        <h2 className="title is-size-4 my-0 has-text-weight-bold">
+                          {post.frontmatter.title}
+                        </h2>
+                      </div>
+                    </div>
+
+                    <div className="card-content pt-2">
+                      <div className="content">
+                        <p className="has-text-dark">{post.excerpt}</p>
+                      </div>
+                    </div>
+                    <div className="card-content pt-0 pb-3">
+                      <div className="field is-grouped mb-3">
+                        <div className="control">
+                          <span className="subtitle is-caps is-size-7">
+                            {post.frontmatter.date}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </Link>
+              </article>
+            ))}
+        </div>
+      </div>
+    );
+  }
+}
+
+RecentBlogRoll.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+};
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query RecentBlogRollQuery {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          limit: 3
+        ) {
+          edges {
+            node {
+              excerpt(pruneLength: 200)
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                templateKey
+                date(formatString: "d MMM YYYY")
+                featuredpost
+                featuredimage {
+                  childImageSharp {
+                    fluid(maxWidth: 120, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={(data, count) => <RecentBlogRoll data={data} count={count} />}
+  />
+);

@@ -7,6 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../components/Layout";
 import RecentPodcastRoll from "../components/RecentPodcastRoll";
 import LatestPodcast from "../components/LatestPodcast";
+import RecentBlogRoll from "../components/RecentBlogRoll";
 
 export const IndexPageTemplate = ({
   image,
@@ -41,7 +42,20 @@ export const IndexPageTemplate = ({
       </div>
     </section>
     <section className="section">
-      <div className="container is-max-desktop">Recent blog posts go here.</div>
+      <div className="container is-max-desktop block">
+        <h2 className="title is-3">Recent blog posts</h2>
+      </div>
+      <div className="block">
+        <RecentBlogRoll />
+      </div>
+      <div className="container is-max-desktop block">
+        <Link className="button is-pulled-right" to="/blog">
+          <span>More posts</span>
+          <span className="icon">
+            <FontAwesomeIcon icon={faArrowRight} />
+          </span>
+        </Link>
+      </div>
     </section>
   </div>
 );
