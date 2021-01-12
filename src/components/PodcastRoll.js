@@ -9,7 +9,7 @@ class PodcastRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <div className="container is-max-desktop ">
+      <div className="container is-max-desktop">
         <div className="columns is-multiline">
           {posts &&
             posts.map(({ node: post }) => (

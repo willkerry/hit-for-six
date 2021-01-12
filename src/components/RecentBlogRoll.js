@@ -91,7 +91,7 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "d MMM YYYY")
+                date(formatString: "D MMM YYYY")
                 featuredpost
                 featuredimage {
                   childImageSharp {

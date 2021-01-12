@@ -3,9 +3,9 @@ import Layout from '../components/Layout'
 
 const NotFoundPage = () => (
   <Layout>
-    <div>
-      <h1 className="title">NOT FOUND</h1>
-      <p>Page not found.</p>
+    <div className="container is-max-desktop">
+      <h1 className="title">Error</h1>
+      <p>This page has not been found.</p>
     </div>
   </Layout>
 )
