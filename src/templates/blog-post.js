@@ -16,6 +16,7 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   featuredImage,
+  author,
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -30,20 +31,33 @@ export const BlogPostTemplate = ({
               </div>
             </div>
             {featuredImage ? (
-            <figure className="image block">
-              <Img
-                className=""
-                fluid={featuredImage}
-                style={{ "border-radius": "0.25rem" }}
-              />
-            </figure>
+              <figure className="image block">
+                <Img
+                  className=""
+                  fluid={featuredImage}
+                  style={{ "border-radius": "4px" }}
+                />
+              </figure>
             ) : null}
-            <div className="columns block is-vcentered">
+            <div className="columns block">
               <div className="column is-9">
                 <div className="subtitle">{description}</div>
               </div>
-
-              
+              <div className="column is-3">
+                <div className="subtitle is-caps is-size-7 mb-2">{date}</div>
+                <div className="subtitle is-size-6 mb-2">{author}</div>
+                <div className="tags">
+                  {tags.map((tag) => (
+                    <Link
+                      className="tag is-light"
+                      key={tag + `tag`}
+                      to={`/tags/${kebabCase(tag)}/`}
+                    >
+                      {tag}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -56,20 +70,7 @@ export const BlogPostTemplate = ({
               <PostContent content={content} />
               {tags && tags.length ? <div className="mt-4"></div> : null}
             </div>
-            <div className="column is-3">
-            <div className="subtitle is-caps is-size-7">{date}</div>
-              <div className="tags">
-                {tags.map((tag) => (
-                  <Link
-                    className="tag is-primary"
-                    key={tag + `tag`}
-                    to={`/tags/${kebabCase(tag)}/`}
-                  >
-                    {tag}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <div className="column is-3"></div>
           </div>
         </div>
       </section>
@@ -106,7 +107,8 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
-        featuredImage={post.frontmatter.featuredimage}
+        featuredImage={post.frontmatter.featuredimage.childImageSharp.fluid}
+        author={post.frontmatter.author}
       />
     </Layout>
   );
@@ -130,6 +132,7 @@ export const pageQuery = graphql`
         title
         description
         tags
+        author
         featuredimage {
           childImageSharp {
             fluid(

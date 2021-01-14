@@ -13,10 +13,7 @@ class BlogRoll extends React.Component {
         <div className="columns is-multiline">
           {posts &&
             posts.map(({ node: post }) => (
-              <article
-                className="column is-4"
-                key={post.id}
-              >
+              <article className="column is-4" key={post.id}>
                 <Link className="" to={post.fields.slug}>
                   <div className="card ">
                     {post.frontmatter.featuredimage ? (
@@ -53,7 +50,6 @@ class BlogRoll extends React.Component {
                         </div>
                       </div>
                     </div>
-                    
                   </div>
                 </Link>
               </article>
