@@ -14,9 +14,9 @@ class LatestPodcast extends React.Component {
         <div className="hero-body">
           {posts &&
             posts.map(({ node: post }) => (
-              <div className="container mx-1">
+              <div className="container mx-auto">
                 <div className="columns is-vcentered">
-                  <div className="column  is-4 is-offset-1">
+                  <div className="column is-6">
                     <Link to={post.fields.slug}>
                       <div className="field is-grouped is-grouped-multiline">
                         <div className="control">
@@ -63,6 +63,7 @@ class LatestPodcast extends React.Component {
                         .pop()}`}
                       width="100%"
                       height="232"
+                      loading="lazy"
                       frameBorder="0"
                       allowtransparency="true"
                       allow="encrypted-media"

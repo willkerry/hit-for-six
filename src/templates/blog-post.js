@@ -52,7 +52,7 @@ export const BlogPostTemplate = ({
               </div>
               <div className="column is-3">
                 <div className="subtitle is-caps is-size-7 mb-2">{date}</div>
-                <div className="subtitle is-size-6 mb-2">{author}</div>
+                <div className="subtitle is-size-6 mb-4">{author}</div>
                 <div className="tags">
                   {tags.map((tag) => (
                     <Link
@@ -140,7 +140,7 @@ export const pageQuery = graphql`
               cropFocus: ENTROPY
               quality: 100
             ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
           publicURL

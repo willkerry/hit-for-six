@@ -108,7 +108,7 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/blog">
               <span className="icon has-text-primary"><FontAwesomeIcon icon={faNewspaper} /></span><span>&nbsp;Blog</span>
               </Link>
-              <Link className="navbar-item " to="/about">
+              <Link className="navbar-item" to="/about">
               <span className="icon has-text-primary"><FontAwesomeIcon icon={faInfoCircle} /></span><span>&nbsp;About</span>
               </Link>
             </div>
