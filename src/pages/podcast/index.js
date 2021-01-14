@@ -1,5 +1,6 @@
 import React from "react";
 
+import SEO from "../../components/seo";
 import Layout from "../../components/Layout";
 import PodcastRoll from "../../components/PodcastRoll";
 
@@ -7,6 +8,7 @@ export default class PodcastIndexPage extends React.Component {
   render() {
     return (
       <Layout>
+        <SEO />
         <div className="hero is-primary is-bold">
           <div className="hero-body">
             <div className="container is-max-desktop">

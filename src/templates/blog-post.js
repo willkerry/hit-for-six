@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
-import { Helmet } from "react-helmet";
 import Img from "gatsby-image";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
+import SEO from "../components/seo";
 import Content, { HTMLContent } from "../components/Content";
 
 export const BlogPostTemplate = ({
@@ -17,11 +17,18 @@ export const BlogPostTemplate = ({
   helmet,
   featuredImage,
   author,
+  ogImage
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <div>
+      {ogImage ? (
+        <SEO title={title} article image={ogImage} />
+      ) : (
+        <SEO title={title} article />
+      )}
+
       <header className="hero is-primary is-bold">
         <div className="hero-body">
           <div className="container is-max-desktop">
@@ -95,19 +102,11 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
         featuredImage={post.frontmatter.featuredimage.childImageSharp.fluid}
+        ogImage={post.frontmatter.featuredimage.publicURL}
         author={post.frontmatter.author}
       />
     </Layout>
@@ -144,6 +143,7 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+          publicURL
         }
       }
     }

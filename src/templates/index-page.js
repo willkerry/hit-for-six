@@ -8,6 +8,7 @@ import Layout from "../components/Layout";
 import RecentPodcastRoll from "../components/RecentPodcastRoll";
 import LatestPodcast from "../components/LatestPodcast";
 import RecentBlogRoll from "../components/RecentBlogRoll";
+import SEO from "../components/seo";
 
 export const IndexPageTemplate = ({
   image,
@@ -19,6 +20,7 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
+    <SEO/>
     <section className="hero is-bold">
       <div className="hero-body">
         <div className="container is-max-desktop">

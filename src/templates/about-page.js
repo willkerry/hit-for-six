@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
+import SEO from "../components/seo";
 import Content, { HTMLContent } from "../components/Content";
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
@@ -9,6 +10,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
   return (
     <div>
+      <SEO/>
       <section className="hero is-primary is-bold">
         <div className="hero-body">
           <div className="container is-max-desktop ">

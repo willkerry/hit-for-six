@@ -4,6 +4,7 @@ import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
+import SEO from "../components/seo";
 import Content, { HTMLContent } from "../components/Content";
 
 export const PodcastTemplate = ({
@@ -22,6 +23,7 @@ export const PodcastTemplate = ({
 
   return (
     <div>
+      <SEO />ß
       <div className="hero is-medium is-dark is-bold">
         <div className="hero-body">
           <div className="columns is-vcentered">
@@ -35,9 +37,9 @@ export const PodcastTemplate = ({
               <p>{description}</p>
               <PostContent content={content} />
               <div className="tags has-addons mt-4">
-                  <span className="tag is-primary">Series {series}</span>
-                  <span className="tag is-dark">Episode {episode}</span>
-                </div>
+                <span className="tag is-primary">Series {series}</span>
+                <span className="tag is-dark">Episode {episode}</span>
+              </div>
             </div>
             <div className="column is-6">
               <iframe
@@ -51,7 +53,6 @@ export const PodcastTemplate = ({
                 allowtransparency="true"
                 allow="encrypted-media"
               ></iframe>
-              
             </div>
           </div>
         </div>
