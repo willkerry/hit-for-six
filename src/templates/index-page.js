@@ -10,21 +10,13 @@ import LatestPodcast from "../components/LatestPodcast";
 import RecentBlogRoll from "../components/RecentBlogRoll";
 import SEO from "../components/seo";
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => (
+export const IndexPageTemplate = ({ description }) => (
   <div>
     <SEO />
     <section className="hero is-bold">
       <div className="hero-body">
         <div className="container is-max-desktop">
-          <h4 className="subtitle is-4">{mainpitch.title}</h4>
+          <h4 className="subtitle is-4">{description}</h4>
         </div>
       </div>
     </section>
@@ -80,13 +72,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
-        intro={frontmatter.intro}
       />
     </Layout>
   );
@@ -107,12 +93,6 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
         description
       }
     }
