@@ -2,18 +2,18 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 media_folder: static/img
 public_folder: /img
 logo_url: https://hitforsixpodcast.com/admin/logo.svg
-site_url: https://hitforsixpodcast.com/
-display_url: https://hitforsixpodcast.com/
-
+site_url: https://hitforsixpodcast.com
+display_url: https://hitforsixpodcast.com
+locale: "en_gb"
 
 collections:
   - name: "podcast"
@@ -21,48 +21,81 @@ collections:
     folder: "src/pages/podcast"
     create: true
     slug: "S{{series}}-E{{episode}}"
+    editor:
+      preview: false
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Series", name: "series", widget: "number"}
-      - {label: "Episode", name: "episode", widget: "number"}
-      - {label: "Spotify URI", name: "spotifyURI", widget: "string", pattern: ["spotify\\:episode\\:.{22}", "Sorry, that’s not a Spotify URI"], hint: "To get the episode’s Spotify URI: open Spotify and find the right show, go to the three dots, go to Share, and you'll find ’Copy Spotify URI’. It’ll look like this: ‘spotify.episode.123456789abcdefghijklm’. https://bit.ly/36Ztqbk" }
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Series", name: "series", widget: "number" }
+      - { label: "Episode", name: "episode", widget: "number" }
+      - {
+          label: "Spotify URI",
+          name: "spotifyURI",
+          widget: "string",
+          pattern:
+            ["spotify\\:episode\\:.{22}", "Sorry, that’s not a Spotify URI"],
+          hint: "To get the episode’s Spotify URI: open Spotify and find the right show, go to the three dots, go to Share, and you'll find ’Copy Spotify URI’. It’ll look like this: ‘spotify.episode.123456789abcdefghijklm’. https://bit.ly/36Ztqbk",
+        }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Author", name: "author", widget: "text"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "text" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
 
   - name: "pages"
     label: "Pages"
+    editor:
+      preview: false
     files:
       - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Description, name: description, widget: string}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: Description, name: description, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" }
