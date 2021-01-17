@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import SpotifyPlayer from "../components/spotify-player";
 
 class LatestPodcast extends React.Component {
   render() {
@@ -56,19 +57,7 @@ class LatestPodcast extends React.Component {
                     </Link>
                   </div>
                   <div className="column is-6">
-                    <iframe
-                      title="Latest episode player from Spotify"
-                      src={`https://open.spotify.com/embed-podcast/episode/${post.frontmatter.spotifyURI
-                        .split(/:/)
-                        .pop()}`}
-                      width="100%"
-                      height="232"
-                      loading="lazy"
-                      frameBorder="0"
-                      allowtransparency="true"
-                      allow="encrypted-media"
-                    ></iframe>
-
+                    <SpotifyPlayer URI={post.frontmatter.spotifyURI} />
                     <div className="field is-grouped is-pulled-right">
                       <div className="control">
                         <Link className="button is-primary" to="/podcast">
