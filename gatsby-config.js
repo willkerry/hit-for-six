@@ -4,7 +4,7 @@ module.exports = {
     description:
       "From Richmond-upon-Thames to Barking and Dagenham, a lanky medium pacer and a leg-spinning all-rounder give their two cents on all things cricket.",
     url: "https://hitforsixpodcast.com", // No trailing slash allowed!
-    image: "/img/og-image.jpg", // Path to your image you placed in the 'static' folder
+    image: "/img/og-image.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@Hit4SixPod",
   },
   plugins: [
