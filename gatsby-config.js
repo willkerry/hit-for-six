@@ -4,12 +4,14 @@ module.exports = {
     description:
       "From Richmond-upon-Thames to Barking and Dagenham, a lanky medium pacer and a leg-spinning all-rounder give their two cents on all things cricket.",
     url: "https://hitforsixpodcast.com", // No trailing slash allowed!
+    siteURL: "https://hitforsixpodcast.com",
     image: "/img/og-image.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@Hit4SixPod",
   },
   plugins: [
     "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-react-helmet",
+    `gatsby-plugin-sitemap`,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
