@@ -23,7 +23,7 @@ export const PodcastTemplate = ({
 
   return (
     <div>
-      <SEO />ß
+      <SEO />
       <div className="hero is-medium is-dark is-bold">
         <div className="hero-body">
           <div className="columns is-vcentered">
