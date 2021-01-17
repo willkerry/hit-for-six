@@ -7,7 +7,7 @@ import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-primary has-text-white-ter mt-6">
+      <footer className="footer fixed-footer has-background-primary has-text-white-ter mt-6">
         <section className="container is-max-desktop">
           <div className="columns">
             <div className="column is-third">

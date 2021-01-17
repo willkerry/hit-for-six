@@ -13,7 +13,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div className="">
+    <div  className="is-full-height">
       <Helmet>
         <html lang="en" className="" />
         <title>{title}</title>
