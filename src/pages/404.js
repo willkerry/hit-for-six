@@ -1,9 +1,9 @@
-import React from "react";
-import Layout from "../components/Layout";
-import ErrorLogo from "../components/error-logo";
-import RecentPodcastRoll from "../components/RecentPodcastRoll";
+import React from 'react'
+import Layout from '../components/Layout'
+import ErrorLogo from '../components/error-logo'
+import RecentPodcastRoll from '../components/RecentPodcastRoll'
 
-import Link from "gatsby-link";
+import Link from 'gatsby-link'
 
 const NotFoundPage = () => (
   <Layout>
@@ -17,7 +17,13 @@ const NotFoundPage = () => (
               </div>
               <div className="level-item has-text-centered-touch">
                 <div>
-                  <h2 class="subtitle">This page has not been found. <Link style={{ textDecoration: "underline" }} to="/">Home</Link>.</h2>
+                  <h2 class="subtitle">
+                    This page has not been found.{' '}
+                    <Link style={{ textDecoration: 'underline' }} to="/">
+                      Home
+                    </Link>
+                    .
+                  </h2>
                 </div>
               </div>
             </div>
@@ -31,6 +37,6 @@ const NotFoundPage = () => (
       </div>
     </section>
   </Layout>
-);
+)
 
-export default NotFoundPage;
+export default NotFoundPage

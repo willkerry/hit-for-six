@@ -1,22 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 class RecentBlogRoll extends React.Component {
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
 
     return (
       <div className="container is-max-desktop ">
         <div className="columns is-multiline">
           {posts &&
             posts.map(({ node: post }) => (
-              <article
-                className="column is-4"
-                key={post.id}
-              >
+              <article className="column is-4" key={post.id}>
                 <Link className="" to={post.fields.slug}>
                   <div className="card ">
                     {post.frontmatter.featuredimage ? (
@@ -53,14 +50,13 @@ class RecentBlogRoll extends React.Component {
                         </div>
                       </div>
                     </div>
-                    
                   </div>
                 </Link>
               </article>
             ))}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -70,7 +66,7 @@ RecentBlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-};
+}
 
 export default () => (
   <StaticQuery
@@ -108,4 +104,4 @@ export default () => (
     `}
     render={(data, count) => <RecentBlogRoll data={data} count={count} />}
   />
-);
+)

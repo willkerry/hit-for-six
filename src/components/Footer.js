@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRss } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRss } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = class extends React.Component {
   render() {
@@ -12,12 +12,13 @@ const Footer = class extends React.Component {
           <div className="columns">
             <div className="column is-third">
               <div className="">
-                <a 
-                className="has-text-danger-light"
-                href="https://www.facebook.com/HitforSix/">
+                <a
+                  className="has-text-danger-light"
+                  href="https://www.facebook.com/HitforSix/"
+                >
                   <span
                     className="has-text-danger-light"
-                    style={{ opacity: "50%" }}
+                    style={{ opacity: '50%' }}
                   >
                     <FontAwesomeIcon icon={faFacebook} />
                   </span>
@@ -26,12 +27,13 @@ const Footer = class extends React.Component {
               </div>
 
               <div className="">
-                <a 
-                className="has-text-danger-light"
-                href="https://twitter.com/Hit4SixPod">
+                <a
+                  className="has-text-danger-light"
+                  href="https://twitter.com/Hit4SixPod"
+                >
                   <span
                     className="has-text-danger-light"
-                    style={{ opacity: "50%" }}
+                    style={{ opacity: '50%' }}
                   >
                     <FontAwesomeIcon icon={faTwitter} />
                   </span>
@@ -40,12 +42,13 @@ const Footer = class extends React.Component {
               </div>
 
               <div className="block">
-                <a 
-                className="has-text-danger-light"
-                href="https://feed.podbean.com/hitforsix/feed.xml">
+                <a
+                  className="has-text-danger-light"
+                  href="https://feed.podbean.com/hitforsix/feed.xml"
+                >
                   <span
                     className="has-text-danger-light"
-                    style={{ opacity: "50%" }}
+                    style={{ opacity: '50%' }}
                   >
                     <FontAwesomeIcon icon={faRss} />
                   </span>
@@ -73,8 +76,8 @@ const Footer = class extends React.Component {
           </div>
         </section>
       </footer>
-    );
+    )
   }
-};
+}
 
-export default Footer;
+export default Footer

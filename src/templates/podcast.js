@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
-import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
-import Layout from "../components/Layout";
-import SEO from "../components/seo";
-import Content, { HTMLContent } from "../components/Content";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { kebabCase } from 'lodash'
+import { Helmet } from 'react-helmet'
+import { graphql, Link } from 'gatsby'
+import Layout from '../components/Layout'
+import SEO from '../components/seo'
+import Content, { HTMLContent } from '../components/Content'
 
 export const PodcastTemplate = ({
   content,
@@ -19,7 +19,7 @@ export const PodcastTemplate = ({
   spotifyURI,
   date,
 }) => {
-  const PostContent = contentComponent || Content;
+  const PostContent = contentComponent || Content
 
   return (
     <div>
@@ -58,7 +58,7 @@ export const PodcastTemplate = ({
         </div>
       </div>
       <section className="section">
-        {helmet || ""}
+        {helmet || ''}
         <div className="container is-max-desktop content">
           {tags && tags.length ? (
             <div style={{ marginTop: `4rem` }}>
@@ -75,8 +75,8 @@ export const PodcastTemplate = ({
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
 PodcastTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -84,10 +84,10 @@ PodcastTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-};
+}
 
 const Podcast = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { markdownRemark: post } = data
 
   return (
     <Layout>
@@ -112,16 +112,16 @@ const Podcast = ({ data }) => {
         title={post.frontmatter.title}
       />
     </Layout>
-  );
-};
+  )
+}
 
 Podcast.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-};
+}
 
-export default Podcast;
+export default Podcast
 
 export const pageQuery = graphql`
   query PodcastByID($id: String!) {
@@ -145,4 +145,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

@@ -1,14 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import SpotifyPlayer from "../components/spotify-player";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql, StaticQuery } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import SpotifyPlayer from '../components/spotify-player'
+import SpotifyPlaceholder from '../components/spotify-placeholder'
 
 class LatestPodcast extends React.Component {
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
 
     return (
       <section className="hero is-primary is-bold">
@@ -74,7 +75,7 @@ class LatestPodcast extends React.Component {
             ))}
         </div>
       </section>
-    );
+    )
   }
 }
 
@@ -84,7 +85,7 @@ LatestPodcast.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-};
+}
 
 export default () => (
   <StaticQuery
@@ -116,4 +117,4 @@ export default () => (
     `}
     render={(data, count) => <LatestPodcast data={data} count={count} />}
   />
-);
+)

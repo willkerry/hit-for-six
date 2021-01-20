@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
-import SEO from "../../components/seo";
-import Layout from "../../components/Layout";
-import PodcastRoll from "../../components/PodcastRoll";
-import Logo from "../../components/logo";
+import SEO from '../../components/seo'
+import Layout from '../../components/Layout'
+import PodcastRoll from '../../components/PodcastRoll'
+import Logo from '../../components/logo'
 
 export default class PodcastIndexPage extends React.Component {
   render() {
@@ -30,6 +30,6 @@ export default class PodcastIndexPage extends React.Component {
           <PodcastRoll />
         </section>
       </Layout>
-    );
+    )
   }
 }

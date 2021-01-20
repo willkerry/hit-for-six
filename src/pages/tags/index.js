@@ -1,8 +1,8 @@
-import React from "react";
-import { kebabCase } from "lodash";
-import { Helmet } from "react-helmet";
-import { Link, graphql } from "gatsby";
-import Layout from "../../components/Layout";
+import React from 'react'
+import { kebabCase } from 'lodash'
+import { Helmet } from 'react-helmet'
+import { Link, graphql } from 'gatsby'
+import Layout from '../../components/Layout'
 
 const TagsPage = ({
   data: {
@@ -14,12 +14,12 @@ const TagsPage = ({
 }) => (
   <Layout>
     <section className="hero is-primary is-bold">
-        <div className="hero-body">
-          <div className="container is-max-desktop ">
-            <h2 className="title ">All blog tags</h2>
-          </div>
+      <div className="hero-body">
+        <div className="container is-max-desktop ">
+          <h2 className="title ">All blog tags</h2>
         </div>
-      </section>
+      </div>
+    </section>
     <section className="section">
       <Helmet title={`Tags | ${title}`} />
       <div className="container is-max-desktop">
@@ -27,7 +27,10 @@ const TagsPage = ({
           {group.map((tag) => (
             <div className="column" key={tag.fieldValue}>
               <Link className="box" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                <span className="tag is-medium">{tag.fieldValue}</span> <span className="tag is-medium is-primary is-rounded">{tag.totalCount}</span>
+                <span className="tag is-medium">{tag.fieldValue}</span>{' '}
+                <span className="tag is-medium is-primary is-rounded">
+                  {tag.totalCount}
+                </span>
               </Link>
             </div>
           ))}
@@ -35,9 +38,9 @@ const TagsPage = ({
       </div>
     </section>
   </Layout>
-);
+)
 
-export default TagsPage;
+export default TagsPage
 
 export const tagPageQuery = graphql`
   query TagsQuery {
@@ -53,4 +56,4 @@ export const tagPageQuery = graphql`
       }
     }
   }
-`;
+`

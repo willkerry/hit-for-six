@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-import Layout from "../components/Layout";
-import RecentPodcastRoll from "../components/RecentPodcastRoll";
-import LatestPodcast from "../components/LatestPodcast";
-import RecentBlogRoll from "../components/RecentBlogRoll";
-import SEO from "../components/seo";
+import Layout from '../components/Layout'
+import RecentPodcastRoll from '../components/RecentPodcastRoll'
+import LatestPodcast from '../components/LatestPodcast'
+import RecentBlogRoll from '../components/RecentBlogRoll'
+import SEO from '../components/seo'
 
 export const IndexPageTemplate = ({ description }) => (
   <div>
@@ -52,7 +52,7 @@ export const IndexPageTemplate = ({ description }) => (
       </div>
     </section>
   </div>
-);
+)
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -64,19 +64,17 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-};
+}
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
-      <IndexPageTemplate
-        description={frontmatter.description}
-      />
+      <IndexPageTemplate description={frontmatter.description} />
     </Layout>
-  );
-};
+  )
+}
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -84,9 +82,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-};
+}
 
-export default IndexPage;
+export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -97,4 +95,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql, StaticQuery } from 'gatsby'
 
 class RecentPodcastRoll extends React.Component {
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
 
     return (
       <div className="container is-max-desktop block">
@@ -72,7 +72,7 @@ class RecentPodcastRoll extends React.Component {
             ))}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -82,7 +82,7 @@ RecentPodcastRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-};
+}
 
 export default () => (
   <StaticQuery
@@ -114,4 +114,4 @@ export default () => (
     `}
     render={(data, count) => <RecentPodcastRoll data={data} count={count} />}
   />
-);
+)

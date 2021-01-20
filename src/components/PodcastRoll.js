@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 class PodcastRoll extends React.Component {
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { data } = this.props
+    const { edges: posts } = data.allMarkdownRemark
 
     return (
       <div className="container is-max-desktop">
@@ -15,7 +15,7 @@ class PodcastRoll extends React.Component {
             posts.map(({ node: post }) => (
               <article
                 className={`column is-4 ${
-                  post.frontmatter.featuredpost ? "is-featured" : ""
+                  post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
                 key={post.id}
               >
@@ -69,7 +69,12 @@ class PodcastRoll extends React.Component {
                     {post.frontmatter.featuredimage ? (
                       <div className="card-image py-2">
                         <figure className="image">
-                          <Img fluid={post.frontmatter.featuredimage.childImageSharp.fluid}/>
+                          <Img
+                            fluid={
+                              post.frontmatter.featuredimage.childImageSharp
+                                .fluid
+                            }
+                          />
                         </figure>
                       </div>
                     ) : null}
@@ -84,7 +89,7 @@ class PodcastRoll extends React.Component {
             ))}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -94,7 +99,7 @@ PodcastRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-};
+}
 
 export default () => (
   <StaticQuery
@@ -132,4 +137,4 @@ export default () => (
     `}
     render={(data, count) => <PodcastRoll data={data} count={count} />}
   />
-);
+)
