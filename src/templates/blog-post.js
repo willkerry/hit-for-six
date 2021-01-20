@@ -1,11 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Img from 'gatsby-image'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import PropTypes from "prop-types";
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import SEO from "../components/seo";
+import Content, { HTMLContent } from "../components/Content";
 
 export const BlogPostTemplate = ({
   content,
@@ -19,7 +18,7 @@ export const BlogPostTemplate = ({
   author,
   ogImage,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <div>
@@ -42,7 +41,7 @@ export const BlogPostTemplate = ({
                 <Img
                   className=""
                   fluid={featuredImage}
-                  style={{ 'border-radius': '4px' }}
+                  style={{ "border-radius": "4px" }}
                 />
               </figure>
             ) : null}
@@ -53,37 +52,25 @@ export const BlogPostTemplate = ({
               <div className="column is-3">
                 <div className="subtitle is-caps is-size-7 mb-2">{date}</div>
                 <div className="subtitle is-size-6 mb-4">{author}</div>
-                <div className="tags">
-                  {tags.map((tag) => (
-                    <Link
-                      className="tag is-light"
-                      key={tag + `tag`}
-                      to={`/tags/${kebabCase(tag)}/`}
-                    >
-                      {tag}
-                    </Link>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
         </div>
       </header>
       <section className="section">
-        {helmet || ''}
+        {helmet || ""}
         <div className="container is-max-desktop content">
           <div className="columns">
             <div className="column is-9">
               <PostContent content={content} />
-              {tags && tags.length ? <div className="mt-4"></div> : null}
             </div>
             <div className="column is-3"></div>
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -91,10 +78,10 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-}
+};
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -110,16 +97,16 @@ const BlogPost = ({ data }) => {
         author={post.frontmatter.author}
       />
     </Layout>
-  )
-}
+  );
+};
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-}
+};
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
@@ -148,4 +135,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
