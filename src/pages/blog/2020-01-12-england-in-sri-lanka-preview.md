@@ -1,16 +1,15 @@
 ---
-templateKey: 'blog-post'
-title: 'England in Sri Lanka: a preview'
+templateKey: blog-post
+title: "England in Sri Lanka: a preview"
 date: 2020-01-12
+author: Michael Kynaston
+description: England test cricket is back! We have whetted our appetites with
+  the delicious spectacle of Australia VS India, but now it's time to watch
+  English collapses against mystery spinners, or hopefully not...
 featuredpost: false
 featuredimage: /img/england-in-sri-lanka.jpg
-author: Michael Kynaston
-description: >-
-  England test cricket is back! We have whetted our appetites with the delicious spectacle of Australia VS India, but now it's time to watch English collapses against mystery spinners, or hopefully not...
 tags:
-- England
-- Sri Lanka
-
+  - England
 ---
 
 England test cricket is back! We have whetted our appetites with the delicious spectacle of Australia VS India, but now it's time to watch English collapses against mystery spinners, or hopefully not...
