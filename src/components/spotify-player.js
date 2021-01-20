@@ -1,6 +1,7 @@
 import * as React from "react";
 
 function SpotifyPlayer(props) {
+  const title = props.title;
   const uri = props.URI;
   const splitAndPoppedURI = uri.split(/:/).pop();
   const url =
@@ -156,8 +157,8 @@ function SpotifyPlayer(props) {
     
     <body>
         <a href='` +
-        url +
-        `' class='box'>
+    url +
+    `' class='box'>
             <div class="overlay">
                 <div class="button">Load player</div>
             </div>
@@ -170,7 +171,7 @@ function SpotifyPlayer(props) {
                     </svg>
                 </div>
                 <div class='column-2'>
-                    <div class='title'>Controvery for England and trouble Down Under</div>
+                    <div class='title'>` + title + `</div>
                     <div class='artist'>Hit For Six</div>
                 </div>
                 <div class='column-3'><svg height="40" width="40"
@@ -191,7 +192,6 @@ function SpotifyPlayer(props) {
       src={url}
       width="100%"
       height="232"
-      loading="lazy"
       frameBorder="0"
       allowtransparency="true"
       allow="encrypted-media"

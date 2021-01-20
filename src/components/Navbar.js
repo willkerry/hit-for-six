@@ -1,22 +1,22 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import spotify from '../img/spotifybadge.svg'
-import google from '../img/googlebadge.svg'
-import apple from '../img/applebadge.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+import { Link } from "gatsby";
+import spotify from "../img/spotifybadge.svg";
+import google from "../img/googlebadge.svg";
+import apple from "../img/applebadge.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faNewspaper,
   faPodcast,
   faInfoCircle,
-} from '@fortawesome/free-solid-svg-icons'
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = class extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       active: false,
-      navBarActiveClass: '',
-    }
+      navBarActiveClass: "",
+    };
   }
 
   toggleHamburger = () => {
@@ -30,14 +30,14 @@ const Navbar = class extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
+              navBarActiveClass: "is-active",
             })
           : this.setState({
-              navBarActiveClass: '',
-            })
+              navBarActiveClass: "",
+            });
       }
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -68,6 +68,7 @@ const Navbar = class extends React.Component {
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               role="button"
+              title="Menu"
               tabIndex={0}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
@@ -90,7 +91,12 @@ const Navbar = class extends React.Component {
                 rel="noopener noreferrer"
               >
                 <span className="icon">
-                  <img src={google} alt="Google Podcasts" />
+                  <img
+                    src={google}
+                    alt="Google Podcasts"
+                    width="110px"
+                    height="34px"
+                  />
                 </span>
               </a>
               <a
@@ -100,7 +106,12 @@ const Navbar = class extends React.Component {
                 rel="noopener noreferrer"
               >
                 <span className="icon">
-                  <img src={spotify} alt="Spotify" />
+                  <img
+                    src={spotify}
+                    alt="Spotify"
+                    width="116px"
+                    height="28px"
+                  />
                 </span>
               </a>
 
@@ -111,7 +122,12 @@ const Navbar = class extends React.Component {
                 rel="noopener noreferrer"
               >
                 <span className="icon">
-                  <img src={apple} alt="Apple Podcasts" />
+                  <img
+                    src={apple}
+                    alt="Apple Podcasts"
+                    width="115px"
+                    height="28px"
+                  />
                 </span>
               </a>
             </div>
@@ -138,8 +154,8 @@ const Navbar = class extends React.Component {
           </div>
         </div>
       </nav>
-    )
+    );
   }
-}
+};
 
-export default Navbar
+export default Navbar;

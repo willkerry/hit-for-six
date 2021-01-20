@@ -43,7 +43,6 @@ collections:
           hint: "To get the episode’s Spotify URI: open Spotify and find the right show, go to the three dots, go to Share, and you'll find ’Copy Spotify URI’. It’ll look like this: ‘spotify.episode.123456789abcdefghijklm’. https://bit.ly/36Ztqbk",
         }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "blog"

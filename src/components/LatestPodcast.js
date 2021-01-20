@@ -4,7 +4,6 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import SpotifyPlayer from '../components/spotify-player'
-import SpotifyPlaceholder from '../components/spotify-placeholder'
 
 class LatestPodcast extends React.Component {
   render() {
@@ -58,7 +57,7 @@ class LatestPodcast extends React.Component {
                     </Link>
                   </div>
                   <div className="column is-6">
-                    <SpotifyPlayer URI={post.frontmatter.spotifyURI} />
+                    <SpotifyPlayer URI={post.frontmatter.spotifyURI} title={post.frontmatter.title}/>
                     <div className="field is-grouped is-pulled-right">
                       <div className="control">
                         <Link className="button is-primary" to="/podcast">
