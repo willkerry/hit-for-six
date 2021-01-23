@@ -20,7 +20,7 @@ collections:
     label: "Podcast"
     folder: "src/pages/podcast"
     create: true
-    slug: "S{{series}}-E{{episode}}"
+    slug: "s{{series}}-e{{episode}}"
     editor:
       preview: false
     fields:
@@ -97,4 +97,6 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: Description, name: description, widget: string }
+          - {label: "Co-host (left)", name: cohost-left, summary: '{{fields.name}}', widget: object, fields: [{label: Name, name: name, widget: string}, {label: Image, name: image, widget: image, allow_nultiple: false}, {label: Bio, name: bio, widget: text}]}
+          - {label: "Co-host (right)", name: cohost-right, widget: object, summary: '{{fields.name}}', fields: [{label: Name, name: name, widget: string}, {label: Image, name: image, widget: image, allow_nultiple: false}, {label: Bio, name: bio, widget: text}]}
           - { label: "Body", name: "body", widget: "markdown" }
