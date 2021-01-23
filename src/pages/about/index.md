@@ -3,10 +3,12 @@ templateKey: about-page
 path: /about
 title: About
 description: A bit about us and the pod.
-cohost-left:
+introduction: >-
+  We hugely enjoyed hosting Hit for Six in radio format while at University and when Covid-19 and lockdown hit, it only made sense to bring back the show as a podcast! It has kept us going during this tricky period and we has been great to get to speak about the game we both love with each other and some interesting guests. Thank you for listening!
+cohostLeft:
   name: Michael
   image: /img/michael-photo.jpeg
-  bio: >-
+  bio: |
     An unashamed 2005 Ashes cliché cricket fan. Michael fell hard for the game
     as an 11-year-old, watching Michael Vaughan’s merry-men defeat the legendary
     Australia side in what he will defend to the death as the greatest series of
@@ -18,7 +20,7 @@ cohost-left:
 
 
     Now living within 15 minutes walk of the Oval and working as a Policy Officer in local government, the best thing about Hit for Six for Michael is being able to talk about his favourite sport as much as he wants without fear of boring anyone!
-cohost-right:
+cohostRight:
   name: Rob
   image: /img/rob-photo.jpg
   bio: >-
@@ -31,4 +33,5 @@ cohost-right:
 
     The kind of bowler that only England could produce at 6 ft 4 but with no pace and little menace - career highlights have included winning promotion ahead of the 1st XI while University of Warwick Men’s 2nd XI captain and scraping through his probation as an MCC playing member.   Now married, he lives with his wife and cat, and works for an insuretech start-up in London.
 ---
+
 \--

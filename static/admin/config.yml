@@ -96,7 +96,8 @@ collections:
               default: "about-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: Description, name: description, widget: string }
-          - {label: "Co-host (left)", name: cohost-left, summary: '{{fields.name}}', widget: object, fields: [{label: Name, name: name, widget: string}, {label: Image, name: image, widget: image, allow_nultiple: false}, {label: Bio, name: bio, widget: text}]}
-          - {label: "Co-host (right)", name: cohost-right, widget: object, summary: '{{fields.name}}', fields: [{label: Name, name: name, widget: string}, {label: Image, name: image, widget: image, allow_nultiple: false}, {label: Bio, name: bio, widget: text}]}
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: Description, name: description, widget: string, hint: "A sentence that’s fed to search engines and social media sites for display in shares and search results." }
+          - { label: Introduction, name: introduction, widget: text }
+          - {label: "Co-host (left)", name: cohostLeft, summary: '{{fields.name}}', widget: object, fields: [{label: Name, name: name, widget: string}, {label: Image, name: image, widget: image, allow_nultiple: false}, {label: Bio, name: bio, widget: text}]}
+          - {label: "Co-host (right)", name: cohostRight, widget: object, summary: '{{fields.name}}', fields: [{label: Name, name: name, widget: string}, {label: Image, name: image, widget: image, allow_nultiple: false}, {label: Bio, name: bio, widget: text}]}
+         
