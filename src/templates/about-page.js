@@ -49,7 +49,7 @@ export const AboutPageTemplate = ({
                     </div>
                     <div class="media-content">
                       <p class="title is-4">{cohostLeftName}</p>
-                      <p class="subtitle is-6">@johnsmith</p>
+                      <p class="subtitle is-6"></p>
                     </div>
                   </div>
 
@@ -82,7 +82,7 @@ export const AboutPageTemplate = ({
                     </div>
                     <div class="media-content">
                       <p class="title is-4">{cohostRightName}</p>
-                      <p class="subtitle is-6">@johnsmith</p>
+                      <p class="subtitle is-6"></p>
                     </div>
                   </div>
 
