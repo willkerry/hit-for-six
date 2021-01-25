@@ -31,7 +31,7 @@ cohostLeft:
     Currently living within 15 minutes walk of the Oval and working as a Policy Officer in local government, the best thing about Hit for Six for Michael is being able to talk about his favourite sport as much as he wants without fear of boring anyone!
 cohostRight:
   name: Rob
-  image: /img/img-20171111-wa0001-copy.jpg
+  image: /img/screenshot-2021-01-25-at-21.03.42.png
   bio: >-
     ”Cricket, rugby, football“. Some say those were Rob’s first words as a
     toddler. Whether that’s true or not, one thing’s for sure - Rob was a sports
