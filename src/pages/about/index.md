@@ -3,23 +3,32 @@ templateKey: about-page
 path: /about
 title: About
 description: A bit about us and the pod.
-introduction: >-
-  We hugely enjoyed hosting Hit for Six in radio format while at University and when Covid-19 and lockdown hit, it only made sense to bring back the show as a podcast! It has kept us going during this tricky period and we has been great to get to speak about the game we both love with each other and some interesting guests. Thank you for listening!
+introduction: We hugely enjoyed hosting Hit for Six in radio format while at
+  University and when Covid-19 and lockdown hit, it made sense to bring back the
+  show as a podcast. It has kept us going during this tricky period and it has
+  been great to talk about the game we both love with each other and some
+  interesting guests. Thank you for listening!
 cohostLeft:
   name: Michael
   image: /img/michael-photo.jpeg
-  bio: |
+  bio: >
     An unashamed 2005 Ashes cliché cricket fan. Michael fell hard for the game
+
     as an 11-year-old, watching Michael Vaughan’s merry-men defeat the legendary
+
     Australia side in what he will defend to the death as the greatest series of
+
     all time. Unfortunately, this was slightly too late in life for him to get
+
     any good at the actual sport itself.
+
 
 
     A self-taught, googlies only bowler, career highlights have included under-15 B-team player of the year and one-time figures of: 0.3 overs, 0 runs, 3 wickets. In addition to these heady heights as a player; as a fan Michael has devoured cricket in any form, through books, television, live matches, radio and now podcasts!
 
 
-    Now living within 15 minutes walk of the Oval and working as a Policy Officer in local government, the best thing about Hit for Six for Michael is being able to talk about his favourite sport as much as he wants without fear of boring anyone!
+
+    Currently living within 15 minutes walk of the Oval and working as a Policy Officer in local government, the best thing about Hit for Six for Michael is being able to talk about his favourite sport as much as he wants without fear of boring anyone!
 cohostRight:
   name: Rob
   image: /img/rob-photo.jpg
