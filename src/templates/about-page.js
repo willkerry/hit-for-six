@@ -43,6 +43,7 @@ export const AboutPageTemplate = ({
                         <Image
                           style={{ borderRadius: "100%" }}
                           fixed={cohostLeftImage}
+                          loading="eager"
                           alt={"Photograph of " + cohostLeftName}
                         />
                       </figure>
@@ -76,6 +77,7 @@ export const AboutPageTemplate = ({
                         <Image
                           style={{ borderRadius: "100%" }}
                           fixed={cohostRightImage}
+                          loading="eager"
                           alt={"Photograph of " + cohostRightName}
                         />
                       </figure>
@@ -155,7 +157,7 @@ export const aboutPageQuery = graphql`
           image {
             childImageSharp {
               fixed(width: 96, height: 96, cropFocus: ENTROPY) {
-                ...GatsbyImageSharpFixed_withWebp
+                ...GatsbyImageSharpFixed_withWebp_noBase64
               }
             }
           }
@@ -166,7 +168,7 @@ export const aboutPageQuery = graphql`
           image {
             childImageSharp {
               fixed(width: 96, height: 96, cropFocus: ENTROPY) {
-                ...GatsbyImageSharpFixed_withWebp
+                ...GatsbyImageSharpFixed_withWebp_noBase64
               }
             }
           }
