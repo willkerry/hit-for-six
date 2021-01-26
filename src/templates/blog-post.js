@@ -24,9 +24,9 @@ export const BlogPostTemplate = ({
   return (
     <div>
       {ogImage ? (
-        <SEO title={title} article image={ogImage} />
+        <SEO title={title} description={description} article image={ogImage} />
       ) : (
-        <SEO title={title} article />
+        <SEO title={title} description={description} article />
       )}
 
       <header className="hero is-primary is-bold">

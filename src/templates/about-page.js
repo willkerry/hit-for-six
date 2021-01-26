@@ -25,7 +25,7 @@ export const AboutPageTemplate = ({
       <section className="hero is-primary is-bold">
         <div className="hero-body">
           <div className="container is-max-desktop ">
-            <h1 className="title ">{title} Hit For Six</h1>
+            <h1 className="title">{title}</h1>
             <h2 className="subtitle mt-4">{introduction}</h2>
           </div>
         </div>
