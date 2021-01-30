@@ -3,7 +3,8 @@ templateKey: blog-post
 title: England are on a roll, but India will ask tough questions
 date: 2021-01-30T09:10:00.000Z
 author: Rob Stileman
-description: Joe Root's men are in form, but India in India is a different beast
+description: Joe Root's men are in form and the England side is feeling
+  settled... but India in India is a different beast entirely.
 featuredpost: true
 featuredimage: /img/india-cricket.jpg
 tags:
