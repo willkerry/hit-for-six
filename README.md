@@ -9,3 +9,6 @@ It uses:
 - [Netlify CMS](https://www.netlifycms.org)
 - [Bulma](https://bulma.io) and [gatsby-plugin-purgecss](https://github.com/anantoghosh/gatsby-plugin-purgecss)
 
+Cheers, 
+
+[Will](https://willkerry.com/)

@@ -104,7 +104,7 @@ export default () => (
               }
               frontmatter {
                 title
-                date(fromNow: true)
+                date(formatString: "D MMMM YYYY")
                 series
                 episode
                 spotifyURI
