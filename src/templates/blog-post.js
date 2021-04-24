@@ -39,7 +39,7 @@ export const BlogPostTemplate = ({
             </div>
             {featuredImage ? (
               <figure className="image block">
-                <GatsbyImage image={featuredImage} className="" style={{ 'border-radius': '4px' }} />
+                <GatsbyImage image={featuredImage} className="" imgStyle={{ 'border-radius': '4px' }} />
               </figure>
             ) : null}
             <div className="columns block">

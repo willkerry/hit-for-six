@@ -42,7 +42,7 @@ export const AboutPageTemplate = ({
                       <figure className="image is-96x96">
                         <GatsbyImage
                           image={cohostLeftImage}
-                          style={{ borderRadius: "100%" }}
+                          imgClassName="is-rounded"
                           loading="eager"
                           alt={"Photograph of " + cohostLeftName} />
                       </figure>
@@ -75,7 +75,7 @@ export const AboutPageTemplate = ({
                       <figure className="image is-96x96">
                         <GatsbyImage
                           image={cohostRightImage}
-                          style={{ borderRadius: "100%" }}
+                          imgClassName="is-rounded"
                           loading="eager"
                           alt={"Photograph of " + cohostRightName} />
                       </figure>

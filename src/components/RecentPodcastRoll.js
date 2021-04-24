@@ -103,7 +103,7 @@ export default () => (
               }
               frontmatter {
                 title
-                date(fromNow: true)
+                date(formatString: "D MMM YYYY")
                 series
                 episode
               }
