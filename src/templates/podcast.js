@@ -1,11 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import SEO from "../components/seo";
+import Content, { HTMLContent } from "../components/Content";
 
 export const PodcastTemplate = ({
   content,
@@ -19,16 +18,16 @@ export const PodcastTemplate = ({
   spotifyURI,
   date,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <div>
       <SEO title={title} description={description} />
-      <div className="hero is-medium is-dark is-bold">
+      <div className="hero is-medium">
         <div className="hero-body">
           <div className="columns is-vcentered">
             <div className="column is-4 is-offset-1">
-              <span className="is-size-6 has-text-weight-semibold has-text-danger-light is-caps">
+              <span className="is-size-6 has-text-weight-semibold has-text-danger is-caps">
                 {date}
               </span>
 
@@ -57,26 +56,10 @@ export const PodcastTemplate = ({
           </div>
         </div>
       </div>
-      <section className="section">
-        {helmet || ''}
-        <div className="container is-max-desktop content">
-          {tags && tags.length ? (
-            <div style={{ marginTop: `4rem` }}>
-              <h4>Tags</h4>
-              <ul className="taglist">
-                {tags.map((tag) => (
-                  <li key={tag + `tag`}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-        </div>
-      </section>
+     
     </div>
   );
-}
+};
 
 PodcastTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -84,10 +67,10 @@ PodcastTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-}
+};
 
 const Podcast = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -112,34 +95,35 @@ const Podcast = ({ data }) => {
         title={post.frontmatter.title}
       />
     </Layout>
-  )
-}
+  );
+};
 
 Podcast.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-}
+};
 
-export default Podcast
+export default Podcast;
 
-export const pageQuery = graphql`query PodcastByID($id: String!) {
-  markdownRemark(id: {eq: $id}) {
-    id
-    html
-    frontmatter {
-      title
-      templateKey
-      date(formatString: "D MMMM YYYY")
-      series
-      episode
-      spotifyURI
-      featuredimage {
-        childImageSharp {
-          gatsbyImageData(width: 264, quality: 100, layout: CONSTRAINED)
+export const pageQuery = graphql`
+  query PodcastByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      frontmatter {
+        title
+        templateKey
+        date(formatString: "D MMMM YYYY")
+        series
+        episode
+        spotifyURI
+        featuredimage {
+          childImageSharp {
+            gatsbyImageData(width: 264, quality: 100, layout: CONSTRAINED)
+          }
         }
       }
     }
   }
-}
-`
+`;
