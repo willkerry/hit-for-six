@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import SEO from "../components/seo";
 import remark from "remark";
@@ -40,12 +40,11 @@ export const AboutPageTemplate = ({
                   <div className="media">
                     <div className="media-left">
                       <figure className="image is-96x96">
-                        <Image
+                        <GatsbyImage
+                          image={cohostLeftImage}
                           style={{ borderRadius: "100%" }}
-                          fixed={cohostLeftImage}
                           loading="eager"
-                          alt={"Photograph of " + cohostLeftName}
-                        />
+                          alt={"Photograph of " + cohostLeftName} />
                       </figure>
                     </div>
                     <div class="media-content">
@@ -74,12 +73,11 @@ export const AboutPageTemplate = ({
                   <div className="media">
                     <div className="media-left">
                       <figure className="image is-96x96">
-                        <Image
+                        <GatsbyImage
+                          image={cohostRightImage}
                           style={{ borderRadius: "100%" }}
-                          fixed={cohostRightImage}
                           loading="eager"
-                          alt={"Photograph of " + cohostRightName}
-                        />
+                          alt={"Photograph of " + cohostRightName} />
                       </figure>
                     </div>
                     <div class="media-content">
@@ -125,12 +123,12 @@ const AboutPage = ({ data }) => {
         cohostLeftName={post.frontmatter.cohostLeft.name}
         cohostLeftBio={post.frontmatter.cohostLeft.bio}
         cohostLeftImage={
-          post.frontmatter.cohostLeft.image.childImageSharp.fixed
+          post.frontmatter.cohostLeft.image.childImageSharp.gatsbyImageData
         }
         cohostRightName={post.frontmatter.cohostRight.name}
         cohostRightBio={post.frontmatter.cohostRight.bio}
         cohostRightImage={
-          post.frontmatter.cohostRight.image.childImageSharp.fixed
+          post.frontmatter.cohostRight.image.childImageSharp.gatsbyImageData
         }
       />
     </Layout>
@@ -143,37 +141,44 @@ AboutPage.propTypes = {
 
 export default AboutPage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-        introduction
-        description
-        cohostLeft {
-          name
-          bio
-          image {
-            childImageSharp {
-              fixed(width: 96, height: 96, cropFocus: ENTROPY) {
-                ...GatsbyImageSharpFixed_withWebp_noBase64
-              }
-            }
+export const aboutPageQuery = graphql`query AboutPage($id: String!) {
+  markdownRemark(id: {eq: $id}) {
+    html
+    frontmatter {
+      title
+      introduction
+      description
+      cohostLeft {
+        name
+        bio
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              width: 96
+              height: 96
+              placeholder: NONE
+              transformOptions: {cropFocus: ENTROPY}
+              layout: FIXED
+            )
           }
         }
-        cohostRight {
-          name
-          bio
-          image {
-            childImageSharp {
-              fixed(width: 96, height: 96, cropFocus: ENTROPY) {
-                ...GatsbyImageSharpFixed_withWebp_noBase64
-              }
-            }
+      }
+      cohostRight {
+        name
+        bio
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              width: 96
+              height: 96
+              placeholder: NONE
+              transformOptions: {cropFocus: ENTROPY}
+              layout: FIXED
+            )
           }
         }
       }
     }
   }
+}
 `;

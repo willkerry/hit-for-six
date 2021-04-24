@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 
 class RecentBlogRoll extends React.Component {
   render() {
@@ -19,12 +19,7 @@ class RecentBlogRoll extends React.Component {
                     {post.frontmatter.featuredimage ? (
                       <div className="card-image">
                         <figure className="image">
-                          <Img
-                            fluid={
-                              post.frontmatter.featuredimage.childImageSharp
-                                .fluid
-                            }
-                          />
+                          <GatsbyImage image={post.frontmatter.featuredimage.childImageSharp.gatsbyImageData} />
                         </figure>
                       </div>
                     ) : null}
@@ -56,7 +51,7 @@ class RecentBlogRoll extends React.Component {
             ))}
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -70,38 +65,35 @@ RecentBlogRoll.propTypes = {
 
 export default () => (
   <StaticQuery
-    query={graphql`
-      query RecentBlogRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-          limit: 3
-        ) {
-          edges {
-            node {
-              excerpt(pruneLength: 200)
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                templateKey
-                date(formatString: "D MMM YYYY")
-                featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 304) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
-                }
-              }
+    query={graphql`query RecentBlogRollQuery {
+  allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]}
+    filter: {frontmatter: {templateKey: {eq: "blog-post"}}}
+    limit: 3
+  ) {
+    edges {
+      node {
+        excerpt(pruneLength: 200)
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          templateKey
+          date(formatString: "D MMM YYYY")
+          featuredpost
+          featuredimage {
+            childImageSharp {
+              gatsbyImageData(width: 304, layout: CONSTRAINED)
             }
           }
         }
       }
-    `}
+    }
+  }
+}
+`}
     render={(data, count) => <RecentBlogRoll data={data} count={count} />}
   />
 )

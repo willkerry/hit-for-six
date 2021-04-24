@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -39,11 +39,7 @@ export const BlogPostTemplate = ({
             </div>
             {featuredImage ? (
               <figure className="image block">
-                <Img
-                  className=""
-                  fluid={featuredImage}
-                  style={{ 'border-radius': '4px' }}
-                />
+                <GatsbyImage image={featuredImage} className="" style={{ 'border-radius': '4px' }} />
               </figure>
             ) : null}
             <div className="columns block">
@@ -82,7 +78,7 @@ export const BlogPostTemplate = ({
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 BlogPostTemplate.propTypes = {
@@ -105,12 +101,12 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
-        featuredImage={post.frontmatter.featuredimage.childImageSharp.fluid}
+        featuredImage={post.frontmatter.featuredimage.childImageSharp.gatsbyImageData}
         ogImage={post.frontmatter.featuredimage.publicURL}
         author={post.frontmatter.author}
       />
     </Layout>
-  )
+  );
 }
 
 BlogPost.propTypes = {
@@ -121,31 +117,29 @@ BlogPost.propTypes = {
 
 export default BlogPost
 
-export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        date(formatString: "D MMM YYYY")
-        title
-        description
-        tags
-        author
-        featuredimage {
-          childImageSharp {
-            fluid(
-              maxWidth: 960
-              maxHeight: 442
-              cropFocus: ENTROPY
-              quality: 100
-            ) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-          publicURL
+export const pageQuery = graphql`query BlogPostByID($id: String!) {
+  markdownRemark(id: {eq: $id}) {
+    id
+    html
+    frontmatter {
+      date(formatString: "D MMM YYYY")
+      title
+      description
+      tags
+      author
+      featuredimage {
+        childImageSharp {
+          gatsbyImageData(
+            width: 960
+            height: 442
+            quality: 100
+            transformOptions: {cropFocus: ENTROPY}
+            layout: CONSTRAINED
+          )
         }
+        publicURL
       }
     }
   }
+}
 `

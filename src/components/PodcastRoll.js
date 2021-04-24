@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 
 class PodcastRoll extends React.Component {
   render() {
@@ -69,12 +69,7 @@ class PodcastRoll extends React.Component {
                     {post.frontmatter.featuredimage ? (
                       <div className="card-image py-2">
                         <figure className="image">
-                          <Img
-                            fluid={
-                              post.frontmatter.featuredimage.childImageSharp
-                                .fluid
-                            }
-                          />
+                          <GatsbyImage image={post.frontmatter.featuredimage.childImageSharp.gatsbyImageData} />
                         </figure>
                       </div>
                     ) : null}
@@ -89,7 +84,7 @@ class PodcastRoll extends React.Component {
             ))}
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -103,38 +98,35 @@ PodcastRoll.propTypes = {
 
 export default () => (
   <StaticQuery
-    query={graphql`
-      query PodcastRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "podcast" } } }
-        ) {
-          edges {
-            node {
-              excerpt(pruneLength: 200)
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                templateKey
-                date(formatString: "D MMM YYYY")
-                series
-                episode
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 264, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
+    query={graphql`query PodcastRollQuery {
+  allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]}
+    filter: {frontmatter: {templateKey: {eq: "podcast"}}}
+  ) {
+    edges {
+      node {
+        excerpt(pruneLength: 200)
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          templateKey
+          date(formatString: "D MMM YYYY")
+          series
+          episode
+          featuredimage {
+            childImageSharp {
+              gatsbyImageData(width: 264, quality: 100, layout: CONSTRAINED)
             }
           }
         }
       }
-    `}
+    }
+  }
+}
+`}
     render={(data, count) => <PodcastRoll data={data} count={count} />}
   />
 )

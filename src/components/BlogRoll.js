@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
       <div className="container is-max-desktop ">
@@ -19,10 +19,10 @@ class BlogRoll extends React.Component {
                     {post.frontmatter.featuredimage ? (
                       <div className="card-image">
                         <figure className="image">
-                          <Img
-                            fluid={
+                          <GatsbyImage
+                            image={
                               post.frontmatter.featuredimage.childImageSharp
-                                .fluid
+                                .gatsbyImageData
                             }
                           />
                         </figure>
@@ -56,7 +56,7 @@ class BlogRoll extends React.Component {
             ))}
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -66,7 +66,7 @@ BlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
+};
 
 export default () => (
   <StaticQuery
@@ -90,9 +90,7 @@ export default () => (
                 featuredpost
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 304) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(width: 304, layout: CONSTRAINED)
                   }
                 }
               }
@@ -103,4 +101,4 @@ export default () => (
     `}
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
-)
+);

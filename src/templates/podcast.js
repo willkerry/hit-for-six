@@ -75,7 +75,7 @@ export const PodcastTemplate = ({
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 PodcastTemplate.propTypes = {
@@ -123,26 +123,23 @@ Podcast.propTypes = {
 
 export default Podcast
 
-export const pageQuery = graphql`
-  query PodcastByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        title
-        templateKey
-        date(formatString: "D MMMM YYYY")
-        series
-        episode
-        spotifyURI
-        featuredimage {
-          childImageSharp {
-            fluid(maxWidth: 264, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+export const pageQuery = graphql`query PodcastByID($id: String!) {
+  markdownRemark(id: {eq: $id}) {
+    id
+    html
+    frontmatter {
+      title
+      templateKey
+      date(formatString: "D MMMM YYYY")
+      series
+      episode
+      spotifyURI
+      featuredimage {
+        childImageSharp {
+          gatsbyImageData(width: 264, quality: 100, layout: CONSTRAINED)
         }
       }
     }
   }
+}
 `
